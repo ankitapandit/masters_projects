@@ -1,0 +1,250 @@
+  body {
+    height: 100%;
+    background: url('city.jpg') rgb(255, 255, 255);
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    font: 400 16px/1.38 'News Cycle';
+    color: rgb(110, 78, 118);
+  }
+
+  .container {
+    position: relative;
+    float: left;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+
+  .element {
+    position: relative;
+    float: left;
+    z-index: 0;
+    width: 73.0769230769%;
+    height: 78px;
+    margin: 21px 0 0 13.46094%;
+    background-color: rgba(96, 141, 159, 0.04);
+  }
+
+  .text {
+    position: relative;
+    float: left;
+  }
+
+  ._button {
+    display: block;
+    position: relative;
+    float: left;
+    height: 31px;
+    margin-top: -56px;
+    border-radius: 3px;
+    background-color: rgb(79, 120, 95);
+    font-family: 'PT Sans Caption';
+    font-size: 16px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  ._input {
+    display: block;
+    position: relative;
+    float: left;
+    width: 27.2307692307%;
+    height: 36px;
+    margin-left: 12.23047%;
+    padding: 0 10px;
+    border: 1px dotted rgb(255, 255, 255);
+    font-size: 13px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+  }
+
+  .container-1 {
+    z-index: 2;
+    width: 34.1538461538%;
+    height: 230px;
+    margin: 18px 0 0 9.11068%;
+    border-style: dashed;
+    background-color: rgba(10, 10, 10, 0);
+  }
+
+  .container-2 {
+    z-index: 9;
+    width: 39.923076923%;
+    height: 295px;
+    margin: 25px 0 0 6.23047%;
+    border-style: double;
+  }
+
+  .container-3 {
+    z-index: 8;
+    width: 39.8461538461%;
+    height: 550px;
+    margin: -230px 0 0 1%;
+    border-style: double;
+  }
+
+  .container-4 {
+    clear: both;
+    z-index: 11;
+    width: 39.923076923%;
+    height: 479px;
+    margin: 20px 0 0 6.23047%;
+    border-style: double;
+  }
+
+  .container-5 {
+    z-index: 10;
+    width: 39.8461538461%;
+    height: 478px;
+    margin: 21px 0 0 1%;
+    border-style: double;
+  }
+
+  .text-1 {
+    clear: both;
+    z-index: 1;
+    margin: -69px 0 0 23.14063%;
+    font-size: 36px;
+    text-align: center;
+    color: rgb(3, 63, 77);
+  }
+
+  .text-1:focus {
+    font-family: 'News Cycle';
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(26, 57, 129);
+  }
+
+  .text-2 {
+    clear: both;
+    z-index: 3;
+    margin: -216px 0 0 12.19141%;
+    font-size: 16px;
+    text-align: justify;
+    color: rgb(110, 78, 118);
+  }
+
+  .text-3 {
+    z-index: 5;
+    margin: -140px 0 0 12.46615%;
+    font-size: 16px;
+    text-align: justify;
+    color: rgb(110, 78, 118);
+  }
+
+  ._button-1 {
+    z-index: 7;
+    width: 11%;
+    margin-left: 13.46094%;
+  }
+
+  ._button-2 {
+    z-index: 12;
+    width: 9.6666666666%;
+    margin-left: 26.9166666666%;
+  }
+
+  ._input-1 {
+    z-index: 4;
+    margin-top: -186px;
+  }
+
+  ._input-2 {
+    z-index: 6;
+    margin-top: -110px;
+  }
+
+  .text a,
+  .text span {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-color: transparent;
+    border-style: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: transparent;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    text-decoration: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: normal;
+  }
+
+  .text strong {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-color: transparent;
+    border-style: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: transparent;
+    font-family: Oxygen;
+    font-weight: 700;
+    text-transform: inherit;
+    text-decoration: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: normal;
+  }
+
+  .text-1 strong {
+    font-style: inherit;
+    font-size: 30px;
+  }
+
+  .text-1 strong:focus {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .text-2 strong,
+  .text-3 strong {
+    font-style: normal;
+    font-size: inherit;
+  }
+
+  input:invalid {
+    border: 1px dashed red;
+  }
+
+  .error {
+    width  : 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .error.active {
+    padding: 0.3em;
+  }

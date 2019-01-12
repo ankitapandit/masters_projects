@@ -1,0 +1,32 @@
+  <!doctype HTML>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>MyWayPoints</title>
+    <link href="http://fonts.googleapis.com/css?family=News+Cycle:400,400|PT+Sans Caption:400|Oxygen:700|Roboto:900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{STATIC_URL}}static\styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=<Insert your key>&callback=initMap"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<Insert your key>&libraries=places"></script>
+  </head>
+  <body class="body page-index clearfix">
+    <script>
+      function clear() {
+        document.getElementById("origin").value = "";
+        document.getElementById("destination").value = "";
+      }
+    </script>
+    <form  action="" method="POST">
+      <div class="element"></div>
+      <p class="text text-1"><strong>My Way Points - Your Google guide for the road</strong></p>
+      <div class="container"></div>
+      <p class="text text-2"><strong>Planning to start from:</strong></p>
+      <input id="origin" class="_input _input-1 js-from" name="origin" type="text" onclick="clear();">
+      <p class="text text-3"><strong>Travel to:</strong></p>
+      <input id="destination" class="_input _input-2 js-to" name="destination" type="text" onclick="clear();">
+      <button id="submit" name="submit" class="_button _button-1 js-submit" onclick="initMap();">Lead the way!</button>
+      <button id="clear" class="_button _button-2 js-clear" onclick="clear();">Clear</button>
+    </form>
+    <script type="text/javascript" src="js/gmaps.js"></script>
+</body>
+</html>

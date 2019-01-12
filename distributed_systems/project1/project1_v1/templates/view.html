@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Display Map</title>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<Insert your key>&callback=initMap"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<Insert your key>&libraries=places"></script>
+  <script type="text/javascript">
+      function initMap(coordinates,temperature,city,max,min,humidity) {
+        var latlng=coordinates[0].split(",");
+        var myLatLng = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};
+        var map=new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 4
+          });
+        var directionsService = new google.maps.DirectionsService;
+	    var directionsDisplay = new google.maps.DirectionsRenderer({map:map});
+        placeMarkers(coordinates,temperature,city,map,max,min,humidity);
+        showRoute(directionsService,directionsDisplay,coordinates);
+     }
+     var infowindow = new google.maps.InfoWindow();
+     function placeMarkers(coordinates,temperature,city,map,max,min,humidity){
+      for(var i=0;i<coordinates.length;i=i+4){
+             latlng=coordinates[i].split(",");
+             myLatLng = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};
+             var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    });
+             attatchInfoWindow(marker,city[i],temperature[i],map,max[i],min[i],humidity[i]);
+        }
+     }
+     function attatchInfoWindow(marker,name,temperature,map,max,min,humidity){
+       google.maps.event.addListener(marker, 'mouseover', function() {
+	    var lat = marker.getPosition().lat();
+        var lng = marker.getPosition().lng();
+        infowindow.setContent(name+" "+"Temperature: " + temperature+" "+"Max Temp: " + max +" "+"Min Temp: " + min+" "+"Humidity: " + humidity);
+        infowindow.open(map,marker);
+	    });
+	    google.maps.event.addListener(marker, 'mouseout', function() {
+	    infowindow.close();
+	    });
+	 }
+     function showRoute(directionsService,directionsDisplay,coordinates){
+        var origin_latlng=coordinates[0].split(",");
+        var origin={lat: parseFloat(origin_latlng[0]), lng: parseFloat(origin_latlng[1])};
+        var destination_latlng=coordinates[coordinates.length-1].split(",");
+        var destination={lat: parseFloat(destination_latlng[0]), lng: parseFloat(destination_latlng[1])};
+        directionsService.route({
+                    origin: origin,
+                    destination: destination,
+                    travelMode: 'DRIVING'
+                    }, function(response, status) {
+                    if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                    } else {
+                    window.alert('Directions request failed due to ' + status);
+                    }
+         });
+     }
+    </script>
+</head>
+<body style="background-color:LightGray">
+<center><h1 style="color:blue">Displaying Map with weather</h1></center>
+<center><h4 style="color:red">Origin:{{origin}}</h4></center>
+<center><h4 style="color:red">Destination:{{destination}}</h4></center><br>
+<div class="container" align="center">
+  <div id="map" style="width:1100px; height:600px;"></div>
+  <script type="text/javascript">
+            var coordinates={{coordinates|safe}}
+            var temperature={{temperature|safe}}
+            var city={{city|safe}}
+            var max={{max|safe}}
+            var min={{min|safe}}
+            var humidity={{humidity|safe}}
+            initMap(coordinates,temperature,city,max,min,humidity);
+        </script>
+</div>
+</body>
+</html>
